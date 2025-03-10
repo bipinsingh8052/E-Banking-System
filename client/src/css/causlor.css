@@ -1,0 +1,115 @@
+.causlorimg{
+    width: 100%;
+    height: 400px;
+}
+
+
+.causlor_nav{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.causlor_nav .causlor_note{
+    width: 80%;
+    /* border: 2px solid black; */
+    background-color: rgb(245, 242, 242);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: -2px 1px 9px -5px red;
+}
+.causlor_nav .causlor_note h6{
+    color: blueviolet;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.causlor_nav .causlor_note p{
+    display: flex;gap: 10px;
+}
+
+.causlor_nav .causlor_note p span{
+    color: red;
+    font-size: 20px;
+}
+
+
+.causlor_nav .causlor_card {
+    height: auto;
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.causlor_nav .causlor_card .first_card{
+    width: 300px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+   
+    align-items: center;flex-direction: column;
+    padding: 20px;
+    border: 5px;gap: 15px;
+    box-shadow: -2px 1px 9px -5px red;
+    background-color:rgb(245, 242, 242);
+}
+.causlor_nav .causlor_card .first_card:hover{
+    transition: all 1s ease-out;
+    box-shadow: -2px 1px 9px -5px red;
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.01);
+}
+.causlor_nav .causlor_card .first_card .card_heading{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    gap: 10px;
+}
+.causlor_nav .causlor_card .first_card .card_heading span{
+    font-size: 37px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 50%;
+}
+
+/* .causlor_nav .causlor_card .first_card .card_heading .red{
+    /* padding: 5px; */
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+} */
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .causlorimg{
+        width: 100%;
+        height: 350px;
+    }
+}
+@media (max-width: 420px) {
+.causlorimg{
+    width: 100%;
+    height: 200px;
+}
+}
