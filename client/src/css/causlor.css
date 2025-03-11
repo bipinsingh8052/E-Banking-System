@@ -83,15 +83,35 @@
     border-radius: 50%;
 }
 
-/* .causlor_nav .causlor_card .first_card .card_heading .red{
-    /* padding: 5px; */
-    background-color: red;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 27px;
-} */
+
+.causlor_nav .causlor_card .first_card .card_para{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.causlor_nav .causlor_card .first_card button{
+    font-size: 17px;
+    padding: 5px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.causlor_nav .causlor_card .first_card button:hover{
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    transform:scaleX(1.1);
+}
+.causlor_nav .causlor_card .first_card .card_heading .blue{
+    background-color: blue;
+    padding: 10px;
+}
+.causlor_nav .causlor_card .first_card .card_heading .green{
+    background-color: green;
+    padding: 10px;
+}
 
 
 

@@ -1,12 +1,15 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+
 import { MdLogout } from "react-icons/md";
 import '../css/header.css'
 export default function Header() {
+  let nav=useNavigate();
+  const Gologin=()=>{
+    nav("/login")
+  }
   return (
     <>
       <div className="subheader">
@@ -30,11 +33,11 @@ export default function Header() {
             <Nav.Link as={Link} to='/home' className='Navbtn' >Home</Nav.Link>
             <Nav.Link as={Link} to='/home' className='Navbtn'>About Us</Nav.Link>
             <Nav.Link as={Link} to='/home' className='Navbtn'>ContactUs</Nav.Link>
-            <Nav.Link as={Link} to='/home' className='Navbtn'>About</Nav.Link>
+            <Nav.Link as={Link} to='/regstration' className='Navbtn'>About</Nav.Link>
             
             
           </Nav>
-          <button  className=" btnlogin"><MdLogout/>Login</button>
+          <button onClick={Gologin} className=" btnlogin"><MdLogout/>Login</button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
