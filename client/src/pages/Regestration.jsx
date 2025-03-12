@@ -1,12 +1,13 @@
 import React from 'react'
-
+import { BsBank } from "react-icons/bs";
+import '../css/registration.css'
 export default function Regestration() {
   return (
     <div className='Regestration'>
       <div className="main_Regestration">
         <div className="regestration_header">
           <h5>Bank Account Registration</h5>
-          <p>AMAN BANK</p>
+          <p><BsBank /> AMAN BANK</p>
         </div>
         <div className="regestration_body">
           <div className="personal_info">
@@ -18,10 +19,15 @@ export default function Regestration() {
                 </div>
                 <div className="uploadimg">
                   <div className="main_upload_img">
-                    <input type="file" />
+                    <label htmlFor="">Upload passport size photo</label>
+                    <input type="file"  />
                   </div>
                   <div className="fullname">
                     <label htmlFor="">Full Name</label>
+                    <input type="text" />
+                  </div>
+                  <div className="mothername">
+                    <label htmlFor="">Mother's Name</label>
                     <input type="text" />
                   </div>
                 </div>
@@ -40,7 +46,7 @@ export default function Regestration() {
               </div>
               <div className="fathername">
                 <div className="father_n">
-                  <label htmlFor="">Father Name</label>
+                  <label htmlFor="">Father's Name</label>
                   <input type="text" />
                 </div>
                 <div className="dob">
@@ -71,6 +77,16 @@ export default function Regestration() {
                 <label htmlFor="">Branch Name</label>
                 <input type="text" />
               </div>
+            </div>
+            <div className="uploadsign">
+              <div className="sign">
+                <label htmlFor="">Upload Sign</label>
+                <input type="file" />
+              </div>
+              <div className="addhar">
+                <label htmlFor="">Addhar Card Img</label>
+                <input type="file" />
+                </div>
             </div>
           </div>
 
