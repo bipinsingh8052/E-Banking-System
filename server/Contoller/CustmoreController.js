@@ -2,6 +2,7 @@ const registration_Model=require("../model/Registration")
 const genertedPassword =require("../utlis/GeneratedPassword")
 const genertedAccountNo =require("../utlis/GeneratedAccountNumber")
 const bcrypt =require("bcryptjs");
+const jwt=require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const Registration_Page=async(req,res)=>{
     // console.log(req.body)
@@ -46,7 +47,7 @@ const Registration_Page=async(req,res)=>{
                 html: `<b>Dear ${name} </b><br> Your account successfully created <br>Your Account number <h1> ${accountnumber}</h1>  Your Password is <h1> ${password}</h1> <p>Your don't share your password any person </p> `
               }
               transporter.sendMail(maildetails )
-              console.log("mail send successfully")
+            //   console.log("mail send successfully")
             let data =await registration_Model.create({
                 name:name,
                 mobile: number,
@@ -57,11 +58,10 @@ const Registration_Page=async(req,res)=>{
                 fatherName:fathername,
                 BirthDate:DOB,
                 address: address,
-                Account_Info: {
+               
                     acountNumber:accountnumber,
                     accountpassword:hasPassword,
-                    accountStatus:accountstatus
-                },
+                    accountStatus:accountstatus,
 
                 mothername:mothername,
                 branchname:branchname
@@ -78,20 +78,95 @@ const Registration_Page=async(req,res)=>{
 
 
 const LoginPage =async(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     const { account, password }=req.body;
 
+    // try {
+    //     let data =await registration_Model.findOne({acountNumber:account });
+    //     if(!data){
+    //         return res.status(400).send({msg:"Invalid Account number write Currect !!"})
+    //     }
+    //     const passwordMatching = await bcrypt.compare(password,data.accountpassword);
+    //     if(!passwordMatching ){
+    //         return res.status(400).send({msg:"invalid password try again!!"})
+    //     }
+    // //     res.cookie("account_holder_name","data.name",{ expires: new Date(Date.now()+ 25892000000),httpOnly:true })
+    // //    res.cookie("account_No","data.acountNumber",{ expires: new Date(Date.now()+ 25892000000),httpOnly:true })
+
+    // // res.cookie("userData", "users"); 
+
+    // const token =await jwt.sign({id:data._id},process.env.JwtToken,{ expiresIn: '30day' } )
+    // // console.log(token)
+    // res.status(200).cookie("account_No",token,{ expires: new Date(Date.now()+ 25892000000),httpOnly:true }).json("ghjk")
+   
+
+
+    //     // res.status(200).cookie("token", token, {
+    //     //     httpOnly: true, // Prevents JavaScript from accessing cookies (security)
+    //     //     // secure: process.env.NODE_ENV === "production", // Use Secure Cookies in Production
+    //     //     maxAge: 60 * 60 * 1000 ,// 1 hour expiry
+    //     //     sameSite: "strict",
+    
+    //     // }).json({ message: "Login successful" });
+
+        
+    // } catch (error) {
+    //     res.status(500).send({msg:"Server Error"})
+    // }
+
+
+
+
     try {
-        let data =await registration_Model.findOne({acountNumber:account});
-        console.log(data)
-        res.send("okk");
+        let data = await registration_Model.findOne({ acountNumber: account });
+        if (!data) {
+            return res.status(400).send({ msg: "Invalid Account Number!" });
+        }
+
+        const passwordMatching = await bcrypt.compare(password, data.accountpassword);
+        if (!passwordMatching) {
+            return res.status(400).send({ msg: "Invalid password!" });
+        }
+
+        // ✅ Generate JWT Token
+        const token = jwt.sign({ id: data._id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+
+    
+        // res.cookie("authToken", token, {
+        //     httpOnly: true,
+        //     // secure: process.env.JWT_SECRET === "production",
+        //     sameSite: "Lax",
+        //     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+        // });
+
+        res.status(200).send({token:token});
+
     } catch (error) {
-        res.status(500).send({msg:"Server Error"})
+        console.error(error);
+        res.status(500).json({ msg: "Server Error" });
     }
     
 }
 
+
+
+const Authoreation=async(req,res)=>{
+    // try {
+    //     const token = req.cookies.authToken;
+    //     console.log(token)
+    //     if (!token) {
+    //         return res.status(401).json({ msg: "Unauthorized. Please log in!" });
+    //     }
+    //     console.log("Token from cookies:", token);
+    //     res.status(200).json({ msg: "User authenticated successfully" });
+    // } catch (error) {
+    //     console.error("Authorization error:", error);
+    //     res.status(500).json({ msg: "Server Error" });
+    // }
+}
+
 module.exports={
     Registration_Page,
-    LoginPage
+    LoginPage,
+    Authoreation
 }

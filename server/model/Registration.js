@@ -40,8 +40,7 @@ const schema =new mongoose.Schema({
         type: String,
         require:true
     },
-    Account_Info: {
-      
+
         acountNumber:{
             type:String,
             require:true
@@ -58,7 +57,7 @@ const schema =new mongoose.Schema({
             type:String,
             require:true
         }
-    }
+  
 })
 
 module.exports=mongoose.model("registration",schema)
