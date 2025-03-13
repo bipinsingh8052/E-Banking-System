@@ -151,18 +151,27 @@ const LoginPage =async(req,res)=>{
 
 
 const Authoreation=async(req,res)=>{
-    // try {
-    //     const token = req.cookies.authToken;
-    //     console.log(token)
-    //     if (!token) {
-    //         return res.status(401).json({ msg: "Unauthorized. Please log in!" });
-    //     }
-    //     console.log("Token from cookies:", token);
-    //     res.status(200).json({ msg: "User authenticated successfully" });
-    // } catch (error) {
-    //     console.error("Authorization error:", error);
-    //     res.status(500).json({ msg: "Server Error" });
-    // }
+            const token=req.header("tokensid");
+            // console.log(token)
+            try {
+                let searchData=null
+                const vers=await jwt.verify(token,process.env.JWT_SECRET,(error,auth)=>{
+                    
+                    if(auth){
+                        // console.log("match the token",auth)
+                        searchData =auth.id;
+                        
+                        // res.status(200).send(auth)
+                    }
+                
+                });
+                // console.log(searchData)
+                    let data= await registration_Model.findById(searchData).select("-accountpassword")
+                    // console.log(data);
+                    res.status(200).send(data);
+            } catch (error) {
+                res.status(500).send("not Found");
+            }
 }
 
 module.exports={

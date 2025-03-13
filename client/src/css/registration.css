@@ -1,17 +1,18 @@
 .Regestration{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .Regestration .main_Regestration{
     width:80%;
     height: auto;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     background-color: aliceblue;
     flex-direction: column;
@@ -23,7 +24,7 @@
     
     width: 100%;
   
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,12 +84,28 @@
     height: 120px;
     width: 100px;
     border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main span{
+    color: black;
+
+    font-size: 12px;
+}
+
+.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main img{
+    height: 100%;
+    width: 100%;
+}
 .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* border: 2px solid black; */
+    justify-self: end;
+    align-items: end;
 }
 .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername{
     display: flex;
@@ -105,6 +122,9 @@
 .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img label,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername label{
     font-size: 16px;
     font-weight: 500;
+}
+.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg {
+    justify-content: end;
 }
 .Regestration .main_Regestration .regestration_body .personal_info .input_section .number{
     width: 100%;
@@ -174,5 +194,715 @@
 .Regestration .main_Regestration .regestration_body .Account_Info{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    margin-top: 20px;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info p{
+    color: rgb(32, 184, 32);
+    font-size: 22px;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One{
+    font-size: 16px;
+    color: black;
+  
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One p{
+    font-size: 20px;
+    color: black;
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select input{
+    padding: 20px;
+    padding-left:20px;
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select {
+    display: flex;
+    gap: 20px;
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name{
+    display: flex;
+    gap: 20px;
+}
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name input{
+    width: 60%;
+    outline: none;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info .uploadsign{
+    /* border: 2px solid black; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .sign ,.Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .addhar    {
+    display: flex;
+    gap: 10px;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign label ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign input ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar input{
+    width: 60%;
+    outline: none;
+}
+
+.Regestration .main_Regestration .regestration_body .notes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.Regestration .main_Regestration .regestration_body .notes p{
+    padding-top: 20px;
+} 
+.Regestration .main_Regestration .regestration_body .button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Regestration .main_Regestration .regestration_body .button button{
+
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    padding: 10px;
+    border: 0.5px solid transparent;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+
+}
+.Regestration .main_Regestration .regestration_body .button button:hover{
+    border: 0.5px solid black;
+    color: whitesmoke;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  
+    
+    .Regestration .main_Regestration{
+        width:80%;
+        height: auto;
+        /* border: 2px solid black; */
+        display: flex;
+        background-color: aliceblue;
+        flex-direction: column;
+        justify-content: center;align-items: center;
+    }
+    
+    
+    .Regestration .main_Regestration .regestration_header{
+        
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: rgb(167, 10, 10);
+        color: whitesmoke;
+        padding: 5px;
+    }
+    
+    .Regestration .main_Regestration .regestration_header h5{
+        width: 30%;
+        font-size: 20px;
+    }
+    .Regestration .main_Regestration .regestration_header p{
+        font-size: 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+    }
+    
+    
+    .Regestration .main_Regestration .regestration_body .personal_info{
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info p{
+        color: rgb(32, 184, 32);
+        font-size: 15px;
+        /* text-decoration: underline; */
+    }
+    
+    
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image{
+        /* border: 2px solid black; */
+        display: flex;
+        /* width: 100%; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main{
+        height: 80px;
+        width: 80px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main span{
+        color: black;
+    
+        font-size: 8px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main img{
+        height: 100%;
+        width: 100%;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* border: 2px solid black; */
+        justify-self: end;
+        align-items: end;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername{
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img input[type="file"]::file-selector-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 2px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img label,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername label{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg {
+        justify-content: end;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number{
+        width: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email {
+        display: flex;
+        gap:10px;
+    
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number label,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email label{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number input,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email input{
+        outline: none;
+        width: 50%;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername{
+        width: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n,.Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob {
+        display: flex;
+        gap: 20px;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob label{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n input, .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob input{
+        outline: none;
+        width: 50%;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;padding: 10px;
+        margin-top: 10px;
+        height: auto;
+        margin-bottom: 10px;
+        font-size: 8px;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address label{
+        width: 20%;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address input{
+        width: 60%;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info{
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid black; */
+        margin-top: 10px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info p{
+        color: rgb(32, 184, 32);
+        font-size: 16px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input{
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One{
+        font-size: 16px;
+        color: black;
+      
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One p{
+        font-size: 15px;
+        color: black;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select input{
+        padding:10px;
+        padding-left:20px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select {
+        display: flex;
+        gap: 20px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name{
+        display: flex;
+        gap: 20px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name label{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name input{
+        width: 60%;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info .uploadsign{
+        /* border: 2px solid black; */
+        margin-top:10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .sign ,.Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .addhar    {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign label ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar label {
+        font-size: 13px;
+        font-weight: 400;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign input ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar input{
+        width: 50%;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .notes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .Regestration .main_Regestration .regestration_body .notes p{
+        padding-top: 20px;
+        font-size: 8px;
+    } 
+    .Regestration .main_Regestration .regestration_body .button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .Regestration .main_Regestration .regestration_body .button button{
+    
+        border: none;
+        outline: none;
+        background-color: #4CAF50;
+        padding: 10px;
+        border: 0.5px solid transparent;
+        border-radius: 10px;
+        color: white;
+        font-size: 13px;
+    
+    }
+    .Regestration .main_Regestration .regestration_body .button button:hover{
+        border: 0.5px solid black;
+        color: whitesmoke;
+    }
+}
+
+
+
+@media screen and (max-width: 420px) {
+
+  
+    
+    .Regestration .main_Regestration{
+        width:80%;
+        height: auto;
+        /* border: 2px solid black; */
+        display: flex;
+        background-color: aliceblue;
+        flex-direction: column;
+        justify-content: center;align-items: center;
+    }
+    
+    
+    .Regestration .main_Regestration .regestration_header{
+        
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: rgb(167, 10, 10);
+        color: whitesmoke;
+        padding: 5px;
+    }
+    
+    .Regestration .main_Regestration .regestration_header h5{
+        width: 30%;
+        font-size: 12px;
+    }
+    .Regestration .main_Regestration .regestration_header p{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+    }
+    
+    
+    .Regestration .main_Regestration .regestration_body .personal_info{
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info p{
+        color: rgb(32, 184, 32);
+        font-size: 10px;
+        /* text-decoration: underline; */
+    }
+    
+    
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image{
+        /* border: 2px solid black; */
+        display: flex;
+        /* width: 100%; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main{
+        height: 50px;
+        width: 50px;
+        /* border: 2px solid black; */
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main span{
+        color: black;
+    
+        font-size: 4px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .image_main img{
+        height: 100%;
+        width: 100%;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* border: 2px solid black; */
+        justify-self: end;
+        align-items: end;
+        overflow: hidden;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname ,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername{
+        display: flex;
+        justify-content: end;
+        gap: 2px;
+        /* border: 2px solid black; */
+        height: 20px;
+        width: 100%;
+       
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img input {
+        background-color: #4CAF50;
+        color: white;
+        padding: 2px;
+        border: none;
+        font-size: 5px;
+        text-align: end;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img label,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername label{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .main_upload_img input,.Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .fullname label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg .mothername input{
+        height: 20px;
+        outline: none;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .image .uploadimg {
+        justify-content: end;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number{
+        width: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email {
+        display: flex;
+        gap:10px;
+    
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number label,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email label{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .number .main_number input,.Regestration .main_Regestration .regestration_body .personal_info .input_section .number .email input{
+        height: 15px;
+        outline: none;
+        width: 50%;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername{
+        width: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n,.Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob {
+        display: flex;
+        gap: 10px;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n label, .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob label{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .father_n input, .Regestration .main_Regestration .regestration_body .personal_info .input_section .fathername .dob input{
+        height: 15px;
+        outline: none;
+        width: 50%;
+    }
+ #date{
+        width: 50%;
+        font-size: 8px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;padding: 10px;
+        margin-top: 10px;
+        height: auto;
+        margin-bottom: 10px;
+        font-size: 8px;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address label{
+        width: 20%;
+        font-size: 8px;
+        font-weight: 300;
+    }
+    .Regestration .main_Regestration .regestration_body .personal_info .input_section .address input{
+        width: 60%;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info{
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid black; */
+        margin-top: 2px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info p{
+        color: rgb(32, 184, 32);
+        font-size: 12px;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input{
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One{
+        font-size: 10px;
+        color: black;
+        width: 50%;
+      
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One p{
+        font-size: 8px;
+        color: black;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select input{
+        padding:10px;
+        padding-left:10px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .select_One  .select {
+        display: flex;
+        gap: 5px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name{
+        display: flex;
+        gap: 20px;
+    }
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name label{
+        font-size: 8px;
+        font-weight:300;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .account_input .branch_name input{
+        width: 50%;
+        height: 20px;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info .uploadsign{
+        /* border: 2px solid black; */
+        margin-top:10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        justify-content: space-between;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .sign ,.Regestration .main_Regestration .regestration_body .Account_Info .uploadsign .addhar    {
+        display: flex;
+        gap: 2px;
+        width: 50%;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign label ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar label {
+        font-size: 8px;
+        font-weight: 300;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .sign input ,.Regestration .main_Regestration .regestration_body .Account_Info  .uploadsign .addhar input{
+        width: 50%;
+        height: 20px;
+        outline: none;
+    }
+    
+    .Regestration .main_Regestration .regestration_body .notes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .Regestration .main_Regestration .regestration_body .notes p{
+        padding-top: 20px;
+        font-size: 8px;
+    } 
+    .Regestration .main_Regestration .regestration_body .button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .Regestration .main_Regestration .regestration_body .button button{
+    
+        border: none;
+        outline: none;
+        background-color: #4CAF50;
+        padding: 5px;
+        border: 0.5px solid transparent;
+        border-radius: 10px;
+        color: white;
+        font-size: 10px;
+    
+    }
+    .Regestration .main_Regestration .regestration_body .button button:hover{
+        border: 0.5px solid black;
+        color: whitesmoke;
+    }
 }

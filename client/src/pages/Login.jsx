@@ -2,22 +2,20 @@ import { useState } from "react"
 import '../css/login.css'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import BaseUrl from "../Confi";
+import toast, { Toaster } from 'react-hot-toast';
 export default function Login() {
   let [model,setmodel]=useState(false)
-  let [sign,setsign]=useState({
-    email:"",
-    password:""
-  });
+  let [sign,setsign]=useState({});
 
   let nav =useNavigate();
   function inputvalue(e){
    
     const {name,value}=e.target;
-    setsign({
-      ...sign,
-      [name]:value
-    });
+    setsign(values=>({...values,[name]:value}))
   }
+
+
   const goWithReg=()=>{
     nav("/regstration")
   }
@@ -26,26 +24,34 @@ export default function Login() {
 
   const FromCheck=async(e)=>{
     e.preventDefault();
-    let api=""
+    let api=`${BaseUrl}/login`;
     try {
       let resp=await axios.post(api,sign);
       console.log(resp)
+      toast.success("login is Successfully !!")
+      
+      localStorage.setItem("token",resp.data.token)
+      nav("/dashboard")
     } catch (error) {
+      toast.error(error.response.data.msg)
       console.log("error")
     }
   }
 
 
   const forgetpassword=async()=>{
-    setmodel(true);
-    let api=""
-    try {
-      let response =await axios.post(api,sign)
-      console.log(response)
-    } catch (error) {
-      console.log("error")
-      
-    }
+    // let api=`${BaseUrl}/Registration`;
+    // try {
+    //   let response =await axios.post(api,sign)
+    //   console.log(response)
+    // } catch (error) {
+    //   console.log("error")
+    // }
+  }
+
+
+  const submitFrom=()=>{
+    console.log(sign)
   }
   return (
     <>
@@ -55,12 +61,12 @@ export default function Login() {
             <form onSubmit={FromCheck} >
                 <div className="email">
                     <label htmlFor="">Enter Account No</label>
-                    <input type="email" name='account' value={sign.email} placeholder="enter account no " onChange={inputvalue} />
+                    <input type="text" name='account'  placeholder="enter account no " onChange={inputvalue} />
                 </div>
                
                 <div className="password">
                     <label htmlFor="">Enter Password</label>
-                    <input type="password" name='password' value={sign.password} placeholder="enter password" onChange={inputvalue} />
+                    <input type="password" name='password'  placeholder="enter password" onChange={inputvalue} />
                 </div>
 
                 <div className="login_option">
@@ -76,12 +82,13 @@ export default function Login() {
                 </div>
                
                 <div className="button">
-                <button type="submit"> Sign in</button>
+                <button type="submit" onClick={submitFrom}> Sign in</button>
                 <p>Don't have an account? <span onClick={goWithReg}>Regstration</span></p>
                 </div>
             </form>
         </div>
     </div>
+    <Toaster/>
     </>
   )
 }
