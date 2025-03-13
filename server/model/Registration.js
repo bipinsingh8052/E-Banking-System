@@ -8,9 +8,17 @@ const schema =new mongoose.Schema({
         type: Number,
         require: true,
     },
-    image: {
+    passportimg: {
         type: String,
         require: true,
+    },
+    signImg:{
+        type:String,
+        require:true
+    },
+    addharimg:{
+        type:String,
+        require:true
     },
     email: {
         type: String,
@@ -20,8 +28,12 @@ const schema =new mongoose.Schema({
         type: String,
         require: true,
     },
+    mothername:{
+        type:String,
+        require:true
+    },
     BirthDate: {
-        type: Date,
+        type: String,
         require: true,
     },
     address: {
@@ -29,12 +41,23 @@ const schema =new mongoose.Schema({
         require:true
     },
     Account_Info: {
-        type: String,
-        require: true,
-    },
-    Bank_Branch_name:{
-        type:String,
-        require:true
+      
+        acountNumber:{
+            type:String,
+            require:true
+        },
+        accountpassword:{
+            type:String,
+            require:true
+        },
+        accountStatus:{
+            type: String,
+            require: true
+        },
+        branchname:{
+            type:String,
+            require:true
+        }
     }
 })
 
