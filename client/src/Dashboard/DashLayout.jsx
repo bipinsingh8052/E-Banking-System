@@ -1,16 +1,16 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import DasNavbar from './DasNavbar';
+import Footer from '../component/Footer';
 
 export default function DashLayout() {
-    let nav=useNavigate();
-    const Logout=()=>{
-        localStorage.clear();
-        nav("/home")
-    }
+   
   return (
-    <div>
-      <h1>This is dashboard in this</h1>
-      <button onClick={Logout}>logout</button>
-    </div>
+    <>
+      <DasNavbar/>
+      <Outlet/>
+     
+      <Footer/>
+    </>
   )
 }

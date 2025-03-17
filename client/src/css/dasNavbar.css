@@ -1,0 +1,105 @@
+.das_Navbar{
+    height: auto;
+    width: 100%;
+}
+.das_Navbar .das_header{
+    background-color: rgb(144, 14, 14);
+    /* border: 2px solid black; */
+    color: rgb(229, 214, 214);
+    width: 100%;font-size: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.das_Navbar .das_subheader{
+    width: 100%;
+    background-color: rgb(243, 237, 237);
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 60px;
+}
+.das_Navbar .das_subheader  h6{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(66, 84, 175, 0.6);
+}
+.das_Navbar .das_subheader h6 span{
+    font-family: cursive;
+    font-weight: 300;
+    color: rgb(104, 133, 46);
+}
+.das_Navbar .das_subheader  button{
+    padding: 5px;
+    border-radius: 10px;
+    color:whitesmoke;
+    border: none;
+    background-color: rgb(7, 112, 70);
+    outline: none;
+}
+
+.das_Navbar .das_subheader  button:hover{
+    color: rgb(213, 200, 200);
+    background-color: rgb(7, 101, 63);
+}
+
+
+
+
+
+@media (max-width: 420px) {
+    .das_Navbar .das_header{
+        background-color: rgb(54, 30, 7);
+        /* border: 2px solid black; */
+        color: rgb(229, 214, 214);
+        width: 100%;font-size: 12px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+.das_Navbar .das_subheader{
+    width: 100%;
+    background-color: rgb(243, 237, 237);
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 60px;
+}
+.das_Navbar .das_subheader  h6{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(66, 84, 175, 0.6);
+}
+.das_Navbar .das_subheader h6 span{
+    font-family: cursive;
+    font-weight: 300;
+    color: rgb(104, 133, 46);
+}
+.das_Navbar .das_subheader  button{
+    padding: 5px;
+    border-radius: 10px;
+    color:whitesmoke;
+    border: none;
+    font-size: 12px;
+    background-color: rgb(7, 112, 70);
+    outline: none;
+}
+
+.das_Navbar .das_subheader  button:hover{
+    color: rgb(213, 200, 200);
+    background-color: rgb(7, 101, 63);
+}
+
+}

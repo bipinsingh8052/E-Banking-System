@@ -1,0 +1,184 @@
+.about_section{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_section h1{
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    background-color: rgb(239, 238, 235);
+    border-bottom: 0.02px  solid black;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.about_section .about_section_main{
+    width: 90%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.about_section .about_section_main .img img {
+    padding: 50px;
+    border: 2px solid rgb(134, 130, 130);
+    border-radius: 50%;
+}
+.about_section .about_section_main .about_paragraph {
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.about_section .about_section_main .about_paragraph h6{
+    font-weight: 300;
+    font-size: 20px;
+
+}
+.about_section .about_section_main .about_paragraph h5{
+    width: 100%;
+    background-color: wheat;
+    padding: 10px;
+    font-size: 23px;
+}
+
+.about_section .about_section_main .about_paragraph .about_section_first ,.about_section .about_section_main .about_paragraph .about_section_second ,.about_section .about_section_main .about_paragraph .about_section_three ,.about_section .about_section_main .about_paragraph .about_section_four{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about_section .about_section_main .about_paragraph .about_section_first span ,.about_section .about_section_main .about_paragraph .about_section_second span,.about_section .about_section_main .about_paragraph .about_section_three span ,.about_section .about_section_main .about_paragraph .about_section_four span{
+    font-size: 21px ;
+    font-weight: 500;
+}
+.about_section .about_section_main .about_paragraph .about_section_first p,.about_section .about_section_main .about_paragraph .about_section_second p ,.about_section .about_section_main .about_paragraph .about_section_three p ,.about_section .about_section_main .about_paragraph .about_section_four p{
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.about_section .about_section_main .about_paragraph .about_section_five{
+    display: flex;
+    flex-direction: column;align-items: start;
+    justify-content: start;
+    gap: 10px;
+}
+.about_section .about_section_main .about_paragraph .about_section_five span{
+    font-size: 21px;
+    font-weight: 500;
+}
+.about_section .about_section_main .about_paragraph .about_section_five p{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 200;
+}
+.about_section .about_section_main .about_paragraph .about_section_five p span{
+    font-size: 35px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    
+    
+    .about_section .about_section_main{
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 420px) {
+
+
+   
+    .about_section h1{
+        width: 100%;
+        text-align: start;
+        padding: 20px;
+        background-color: rgb(239, 238, 235);
+        border-bottom: 0.02px  solid black;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    
+  
+    .about_section .about_section_main .img img {
+        padding: 30px;
+        border: 2px solid rgb(134, 130, 130);
+        border-radius: 50%;
+    }
+    .about_section .about_section_main .about_paragraph {
+    
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .about_section .about_section_main .about_paragraph h6{
+        font-weight: 300;
+        font-size: 18px;
+    
+    }
+    .about_section .about_section_main .about_paragraph h5{
+        width: 100%;
+        background-color: wheat;
+        padding: 10px;
+        font-size: 20px;
+    }
+    
+    .about_section .about_section_main .about_paragraph .about_section_first ,.about_section .about_section_main .about_paragraph .about_section_second ,.about_section .about_section_main .about_paragraph .about_section_three ,.about_section .about_section_main .about_paragraph .about_section_four{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about_section .about_section_main .about_paragraph .about_section_first span ,.about_section .about_section_main .about_paragraph .about_section_second span,.about_section .about_section_main .about_paragraph .about_section_three span ,.about_section .about_section_main .about_paragraph .about_section_four span{
+        font-size: 18px ;
+        font-weight: 500;
+    }
+    .about_section .about_section_main .about_paragraph .about_section_first p,.about_section .about_section_main .about_paragraph .about_section_second p ,.about_section .about_section_main .about_paragraph .about_section_three p ,.about_section .about_section_main .about_paragraph .about_section_four p{
+        font-size: 15px;
+        font-weight: 200;
+    }
+    
+    
+    .about_section .about_section_main .about_paragraph .about_section_five span{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .about_section .about_section_main .about_paragraph .about_section_five p{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 200;
+    }
+    .about_section .about_section_main .about_paragraph .about_section_five p span{
+        font-size: 23px;
+    }
+    
+    .about_section .about_section_main{
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    
+    
+}

@@ -31,9 +31,9 @@ export default function Header() {
             
           >
             <Nav.Link as={Link} to='/home' className='Navbtn' >Home</Nav.Link>
-            <Nav.Link as={Link} to='/home' className='Navbtn'>About Us</Nav.Link>
-            <Nav.Link as={Link} to='/home' className='Navbtn'>ContactUs</Nav.Link>
-            <Nav.Link as={Link} to='/regstration' className='Navbtn'>About</Nav.Link>
+            <Nav.Link as={Link} to='/about' className='Navbtn'>About Us</Nav.Link>
+            <Nav.Link as={Link} to='/contact' className='Navbtn'>Contact Us</Nav.Link>
+            <Nav.Link as={Link} to='/regstration' className='Navbtn'>Registration</Nav.Link>
             
             
           </Nav>

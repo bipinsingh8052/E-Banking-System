@@ -10,24 +10,25 @@ export default function ProtocedRoute(props) {
         let api=`${BaseUrl}/authoration`;
         try {
             const token =localStorage.getItem("token");
-            console.log(token)
+            // console.log(token)
            if(!token){
-                nav("/home")
+            nav("/home")
             }
             let response =await axios.post(api,null,{headers: { "tokensid": token }})
              console.log(response);
+             localStorage.setItem("name",response.data.name)
              if(!response.data){
                 localStorage.clear()
                 nav("/home")
             }
         } catch (error) {
             console.log(error);
+            nav("/home")
         }
     }
     useEffect(()=>{loading()},[])
   return (
     <div>
-        this is propeted
       <Component/>
     </div>
   )
