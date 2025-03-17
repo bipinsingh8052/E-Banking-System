@@ -169,13 +169,20 @@ const Authoreation=async(req,res)=>{
                     let data= await registration_Model.findById(searchData).select("-accountpassword")
                     // console.log(data);
                     res.status(200).send(data);
+
             } catch (error) {
                 res.status(500).send("not Found");
             }
 }
 
+
+
+
+
+
 module.exports={
     Registration_Page,
     LoginPage,
-    Authoreation
+    Authoreation,
+  
 }

@@ -10,6 +10,13 @@ import ProtocedRoute from './ProtocedRoute'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Protoced from './component/Protoced'
+import YourProfile from './Dashboard/YourProfile'
+import AccountStatement from './Dashboard/AccountStatement'
+import SubmitCash from './Dashboard/SubmitCash'
+import WithDrawCash from './Dashboard/WithDrawCash'
+import MiniStatment from './Dashboard/MiniStatment'
+import ResetPassword from './Dashboard/ResetPassword'
+import BalanceInQuiry from './Dashboard/BalanceInQuiry'
 export default function App() {
   return (
     
@@ -29,7 +36,14 @@ export default function App() {
        </Routes>
        <Routes>
         <Route path="dashboard" element={<ProtocedRoute Component={DashLayout}/> }>
-        
+        <Route index element={<ProtocedRoute Component={YourProfile}/>}/>
+        <Route path='/dashboard/profile' element={<ProtocedRoute Component={YourProfile}/>}/>
+        <Route path='/dashboard/accountStatement' element={<ProtocedRoute Component={AccountStatement}/>}/>
+        <Route path='/dashboard/submitcash' element={<ProtocedRoute Component={SubmitCash}/>}/>
+        <Route path='withdrawcash' element={<ProtocedRoute Component={WithDrawCash}/>}/>
+        <Route path='ministatement' element={<ProtocedRoute Component={MiniStatment}/>}/>
+        <Route path='password' element={<ProtocedRoute Component={ResetPassword}/>}/>
+        <Route path='balance' element={<ProtocedRoute Component={BalanceInQuiry}/>}/>
         </Route>
        </Routes>
      </BrowserRouter>

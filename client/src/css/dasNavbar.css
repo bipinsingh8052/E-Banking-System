@@ -48,8 +48,14 @@
     background-color: rgb(7, 101, 63);
 }
 
-
-
+.dasnavbar_mainsection{
+    background-color: brown;
+    color: white;
+}
+.nav_option{
+    background-color: blue;
+   
+}
 
 
 @media (max-width: 420px) {
