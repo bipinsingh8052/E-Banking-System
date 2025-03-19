@@ -46,6 +46,7 @@
 .das_Navbar .das_subheader  button:hover{
     color: rgb(213, 200, 200);
     background-color: rgb(7, 101, 63);
+    text-decoration: none;
 }
 
 .dasnavbar_mainsection{
