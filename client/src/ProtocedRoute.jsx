@@ -17,6 +17,7 @@ export default function ProtocedRoute(props) {
             let response =await axios.post(api,null,{headers: { "tokensid": token }})
              console.log(response);
              localStorage.setItem("name",response.data.name)
+             localStorage.setItem("UserId",response.data._id)
              if(!response.data){
                 localStorage.clear()
                 nav("/home")

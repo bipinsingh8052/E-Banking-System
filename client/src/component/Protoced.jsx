@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Protoced(props){
+    let[store,setStore]=useState("")
     let nav =useNavigate();
 
     
@@ -11,11 +12,12 @@ export default function Protoced(props){
     const loading=()=>{
 
         let name=localStorage.getItem("name");
+        setStore(name)
         if(name){
             nav("/dashboard")
         }
     }
-    useEffect(()=>{loading()},[])
+    useEffect(()=>{loading()},[store])
 
     return(
         <Component/>
