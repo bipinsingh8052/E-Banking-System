@@ -3,7 +3,16 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-
     padding: 20px;
     font-size: 25px;
+}
+@media (max-width: 768px) {
+    .checkbalance{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        font-size: 24px;
+    }
 }

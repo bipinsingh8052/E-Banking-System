@@ -1,0 +1,53 @@
+.account_statement{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px 0px;
+
+}
+.account_statement .account_statement_section{
+    /* width: 80%; */
+    /* border: 2px solid black; */
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: rgb(165, 135, 135); */
+    box-shadow: -2px 1px 10px 1px rgb(171, 148, 148);
+    width: 80%;
+
+    
+}
+.account_statement .account_statement_section .account_statement_detail{
+    width: 100%;
+    overflow-X: scroll;
+    height: auto;
+
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #customers td, #customers th {
+    border: 0.5px solid #ddd;
+    padding: 8px;
+  }
+  #customers thead tr th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+    font-size: 20px;
+  }
+  #customers td{
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}

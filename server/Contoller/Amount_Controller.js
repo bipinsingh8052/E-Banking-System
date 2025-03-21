@@ -1,6 +1,7 @@
 const amount_Model =require("../model/AmountDetail")
 const custmor_model =require("../model/Registration")
 const nodemailer = require("nodemailer");
+const bcrypt =require("bcryptjs");
 const AddAmount=async(req,res)=>{
     // console.log(req.body);
     const { amount, userid,status }=req.body;
@@ -110,10 +111,57 @@ const CheckBalance=async(req,res)=>{
             }
         })
         let answer =deposite-withdraw;
-        console.log(answer)
+        // console.log(answer)
         res.status(200).send({amount:answer})
     } catch (error) {
         res.status(500).send({msg:"Server Error"});
+    }
+    
+}
+
+
+
+
+
+const ResetPasword=async(req,res)=>{
+    // console.log(req.body);
+    const {
+        userid,
+        oldpassword,
+        newpassword,
+        confomepass
+      }=req.body;
+      try {
+        let finddata =await custmor_model.findById(userid);
+        const passwordMatching = await bcrypt.compare(oldpassword, finddata.accountpassword);
+        if (!passwordMatching) {
+            // console.log(passwordMatching);
+            return res.status(400).send({ msg: "Invalid password!" });
+        }
+       
+                  let salt =await bcrypt.genSalt(10);
+                  let hasPassword=await bcrypt.hash(newpassword,salt);
+             let updataPassword =await custmor_model.findByIdAndUpdate(userid,{accountpassword:hasPassword})
+               res.status(200).send({msg:"Your pasword is Reset it..!!"})
+      
+       
+      } catch (error) {
+        res.status(500).send({msg:"Server Error"})
+      }  
+}
+
+
+
+const AmountStatement=async(req,res)=>{
+    // console.log(req.body);
+    const { userid }=req.body;
+    try {
+        // const findData=await amount_Model.find({CustmerId:userid}).sort({date:-1})
+        const findData=await amount_Model.find({CustmerId:userid})
+        // console.log(findData)
+        res.status(200).send(findData)
+    } catch (error) {
+        res.status(500).send({msg:"server Error"})
     }
     
 }
@@ -123,5 +171,7 @@ module.exports={
 
     AddAmount,
     WithDrawAmount,
-    CheckBalance
+    CheckBalance,
+    ResetPasword,
+    AmountStatement
 }

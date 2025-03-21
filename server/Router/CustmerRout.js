@@ -1,6 +1,6 @@
 const CustmerController=require("../Contoller/CustmoreController")
 const express =require("express");
-const AmountController=require("../Contoller/Amount_Controller")
+const AmountController=require("../Contoller/Amount_Controller");
 const route =express.Router();
 
 
@@ -10,4 +10,6 @@ route.post("/authoration" ,CustmerController.Authoreation)
 route.post("/AddAmount",AmountController.AddAmount)
 route.post("/withdraw",AmountController.WithDrawAmount)
 route.post("/checkbalance",AmountController.CheckBalance)
+route.post("/resetpassword",AmountController.ResetPasword)
+route.post("/accountStatement",AmountController.AmountStatement)
 module.exports=route;
