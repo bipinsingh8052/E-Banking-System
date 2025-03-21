@@ -167,11 +167,65 @@ const AmountStatement=async(req,res)=>{
 }
 
 
+
+const MiniStatement=async(req,res)=>{
+    // console.log(req.body);
+    const { userid }=req.body;
+    try {
+        const findData=await amount_Model.find({CustmerId:userid}).sort({date:-1}).limit(8);
+        // console.log(findData)
+        res.status(200).send(findData)
+    } catch (error) {
+        res.status(500).send({msg:"server Error"})
+    }
+  
+}
+
+
+const SearchStatement=async(req,res)=>{
+    console.log(req.body);
+    const { userid ,enddate, startdate}=req.body;
+    try {
+        // let findData =await amount_Model.find({
+        //     $and: [
+        //       {
+        //     $and: [
+        //       { From: { $gte: startdate } },
+        //       { To: { $lte: enddate } },
+        //     ],    // and operator body finishes
+        //     },
+        //       { CustmerId:userid},
+        //     ], //Or operator body finishes
+        //   }).sort({date:-1})
+
+
+        let findData =await amount_Model.find({    
+                $and: [
+                    {"date":{ $gte: startdate ,
+                    $lte: enddate }},
+                  { CustmerId:userid}
+                ],
+              })
+        //   console.log(!findData)
+          if(!findData){
+            console.log("no")
+            return res.status(400).send({msg:"false"})
+          }
+           res.status(200).send({msg:"true"})
+    } catch (error) {
+        res.status(500).send({msg:"server error"})
+    }
+    
+}
+
+
 module.exports={
 
     AddAmount,
     WithDrawAmount,
     CheckBalance,
     ResetPasword,
-    AmountStatement
+    AmountStatement,
+    MiniStatement,
+    SearchStatement
 }

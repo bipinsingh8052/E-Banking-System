@@ -16,8 +16,6 @@ export default function AccountStatement() {
       toast.error(error.response.data.msg)
     }
   }
-  let debit=0;
-  let credit=0;
   let answer=0;
 
 
@@ -46,22 +44,22 @@ export default function AccountStatement() {
                 data.map((e,index)=>{
                   if (e.status === "Deposite") {
                     answer += e.amount; // Add deposit
-                    console.log(answer)
+                    // console.log(answer)
                 } else if (e.status === "Withdraw") {
                   answer -= e.amount; // Add deposit
-                  console.log(answer)
+                  // console.log(answer)
                 }return(
                   
                   <tr key={index}>
                     <td>{e.date}</td>
-                    <tc>UPI</tc>
+                    <td>UPI</td>
                     {
                       (e.status=="Deposite")?<td style={{color:"green",fontWeight:"600"}}>{e.amount}</td>:<td>----</td>
                     }
                     {
                       (e.status=="Withdraw")?<td style={{color:"red", fontWeight:"600"}}>{e.amount}</td>:<td>----</td>
                     }
-                    <td>34567890</td>
+                    <td>{ answer}</td>
                   </tr>
                 )})
               }

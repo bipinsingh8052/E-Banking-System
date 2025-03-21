@@ -12,4 +12,6 @@ route.post("/withdraw",AmountController.WithDrawAmount)
 route.post("/checkbalance",AmountController.CheckBalance)
 route.post("/resetpassword",AmountController.ResetPasword)
 route.post("/accountStatement",AmountController.AmountStatement)
+route.post("/miniStatement",AmountController.MiniStatement)
+route.post("/searchStatement",AmountController.SearchStatement);
 module.exports=route;

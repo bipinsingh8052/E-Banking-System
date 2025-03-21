@@ -1,0 +1,171 @@
+.mini_statement{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mini_statement .mini_sort{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: rgba(183, 13, 13, 0.842);
+    box-shadow: -2px 1px 10px 1px rgb(171, 148, 148);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mini_statement .mini_sort .mini_first_sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;gap: 10px;
+}
+.mini_statement .mini_sort .mini_first_sort p{
+    font-size: 18px;
+    font-weight: 490;
+    margin-top: 15px;
+}
+
+.mini_statement .mini_sort .mini_first_sort input{
+    height: 30px;
+    padding-left: 10px;
+}
+
+.mini_statement .mini_sort .mini_Second_sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;gap: 10px;
+}
+
+.mini_statement .mini_sort .mini_Second_sort p{
+    font-size: 18px;
+    font-weight: 490;
+    margin-top: 15px;
+}
+.mini_statement .mini_sort .mini_Second_sort input{
+    height: 30px;
+    padding-left: 10px;
+}
+.mini_statement .mini_sort button{
+    padding: 5px 8px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: 500;
+}
+.mini_statement .mini_sort button:hover{
+    background-color: rgb(11, 179, 56);
+    color: rgb(28, 26, 26);
+    
+}
+
+.mini_statement .account_statement_detail{
+    height: auto;
+    width: 80%;
+    overflow-x: scroll;
+    box-shadow: -2px 1px 10px 1px rgb(171, 148, 148);
+    padding: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .mini_statement .mini_sort{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 13px;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        background-color: rgba(183, 13, 13, 0.842);
+        box-shadow: -2px 1px 10px 1px rgb(171, 148, 148);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .mini_statement .mini_sort .mini_first_sort{
+        display: flex;
+        align-items: center;
+        justify-content: center;gap: 10px;
+    }
+    .mini_statement .mini_sort .mini_first_sort p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 15px;
+    }
+    
+    
+  
+    
+    .mini_statement .mini_sort .mini_Second_sort p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 15px;
+    }
+    
+    .mini_statement .mini_sort button{
+        padding: 3px 5px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        color: black;
+        font-weight: 450;
+    }
+    .mini_statement .mini_sort button:hover{
+        background-color: rgb(11, 179, 56);
+        color: rgb(28, 26, 26);
+        
+    }
+    
+    .mini_statement .account_statement_detail{
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .mini_statement .mini_sort{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        background-color: rgba(183, 13, 13, 0.842);
+        box-shadow: -2px 1px 10px 1px rgb(171, 148, 148);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    
+    .mini_statement .mini_sort .mini_first_sort p{
+        font-size: 15px;
+        font-weight: 490;
+        margin-top: 15px;
+    }
+    
+    
+    .mini_statement .mini_sort .mini_Second_sort p{
+        font-size: 15px;
+        font-weight: 490;
+        margin-top: 15px;
+    }
+    .mini_statement .mini_sort .mini_Second_sort input{
+        width: 50%;
+    }
+    .mini_statement .mini_sort .mini_first_sort input{
+        width: 50%;
+    }
+    
+}
