@@ -55,7 +55,7 @@ const WithDrawAmount=async(req,res)=>{
         })
         let answer =deposite-withdraw;
         // console.log(answer)
-        if(answer <=0){
+        if(!answer>0){
             // console.log(answer,"zero")
             return res.status(400).send({msg:"you have enficenent Balance"});
         }
@@ -66,6 +66,23 @@ const WithDrawAmount=async(req,res)=>{
                    amount:amount,
                    status:status
            })
+           const data =await custmor_model.findById(userid)
+           const{name,acountNumber}=data;
+           const transporter = nodemailer.createTransport({
+                          service: "gmail",
+                          auth: {
+                            user: "bipinsingh8052@gmail.com",
+                            pass: "nprr lurs altr vzol", 
+                          },
+                        });
+                        let maildetails = {
+                          from : "bipinsingh8052@gmail.com",
+                          to : data.email,
+                          subject : "E-Banking registration",
+                          text : ` Your account successfully created \n Your Account number ${data.accountnumber} `,
+                          html: `<b>Dear ${name} </b><br> Your created money in your account <br>Your Account number <h1> ${acountNumber}</h1>  withDraw  amount in your account Rs. <h1> ${amount}</h1> on your account  <p>Your don't share your password any person </p> `
+                        }
+                        transporter.sendMail(maildetails )
         }
         res.status(201).send({msg:"successfully withdraw it"});
     } catch (error) {
@@ -76,8 +93,29 @@ const WithDrawAmount=async(req,res)=>{
 
 
 const CheckBalance=async(req,res)=>{
-    console.log(req.body);
-    res.send("okk")
+    // console.log(req.body);
+    const { id}=req.body;
+    try {
+        const finditAmount = await amount_Model.find({CustmerId:id})
+        // console.log(finditAmount)
+        let deposite=0;
+        let withdraw =0;
+        let arr=finditAmount.map((e)=>{
+            if(e.status=="Deposite"){
+                deposite+=e.amount;
+            }
+            if(e.status=="Withdraw")
+            {
+                withdraw+=e.amount;
+            }
+        })
+        let answer =deposite-withdraw;
+        console.log(answer)
+        res.status(200).send({amount:answer})
+    } catch (error) {
+        res.status(500).send({msg:"Server Error"});
+    }
+    
 }
 
 
