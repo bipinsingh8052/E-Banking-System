@@ -8,13 +8,20 @@ export default function SubmitCash() {
 
  
   let[amount,setAmount]=useState("");
+  let[depo,setdepo]=useState("Cash");
+
+  const handleoption=(e)=>{
+    // console.log(e.target.value);
+    // const{name,value}=e.target;
+      setdepo(e.target.value)
+  }
 
   const HandleAmount=async()=>{
     setShow(true)
     let api =`${BaseUrl}/AddAmount`;
     try {
       
-      let response =await axios.post(api,{amount:amount,userid:localStorage.getItem("UserId"),status:"Deposite"})
+      let response =await axios.post(api,{amount:amount,userid:localStorage.getItem("UserId"),status:"Deposite",option:depo})
       console.log(response);
       toast.success(response.data.msg)
       setTimeout(()=>{
@@ -52,6 +59,16 @@ export default function SubmitCash() {
           <div className="submit_Cash_input">
             <label > Enter the Amount :</label>
             <input type="number" value={amount} onChange={(e)=>{setAmount(e.target.value)}} />
+          </div>
+          <div className="submit_Cash_input">
+          <label for="cars">Choose option deposite </label>
+         
+              <select name="option" id="cars" value={depo}  onChange={handleoption}>
+                <option value="Cash" selected>Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="By Bank">By Bank</option>
+                <option value="By Cheque">By Cheque</option>
+              </select>
           </div>
           <button onClick={HandleAmount}>
             Submit Cash

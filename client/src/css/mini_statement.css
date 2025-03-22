@@ -76,6 +76,14 @@
     padding: 2px;
 }
 
+#notAdata{
+    text-align: center;
+    color: red;
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 19px;
+}
+
 @media (max-width: 768px) {
 
     .mini_statement .mini_sort{

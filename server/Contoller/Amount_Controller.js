@@ -1,10 +1,13 @@
 const amount_Model =require("../model/AmountDetail")
 const custmor_model =require("../model/Registration")
+const otp_Model =require("../model/OTPModel");
 const nodemailer = require("nodemailer");
 const bcrypt =require("bcryptjs");
+
+
 const AddAmount=async(req,res)=>{
     // console.log(req.body);
-    const { amount, userid,status }=req.body;
+    const { amount, userid,status , option}=req.body;
     try {
         const data =await custmor_model.findById(userid)
         // console.log(data.email)
@@ -28,7 +31,8 @@ const AddAmount=async(req,res)=>{
         const create =await amount_Model.create({
              CustmerId:userid,
                 amount:amount,
-                status:status
+                status:status,
+                amountDetail:option
         })
         res.status(200).send({msg:"Add the Amount in your Account"})
     } catch (error) {
@@ -39,24 +43,28 @@ const AddAmount=async(req,res)=>{
 
 const WithDrawAmount=async(req,res)=>{
     // console.log(req.body);
-    const { amount, userid, status }=req.body;
+    const { amount, userid, status,option }=req.body;
     try {
         const finditAmount = await amount_Model.find({CustmerId:userid})
         // console.log(finditAmount)
         let deposite=0;
         let withdraw =0;
+        // console.log(withdraw)
         finditAmount.map((e)=>{
             if(e.status=="Deposite"){
                 deposite+=e.amount;
             }
-            if(e.status=="Withdraw")
+            else if(e.status=="Withdraw")
             {
                 withdraw+=e.amount;
+                // console.log(withdraw)
             }
         })
+        withdraw+=Number(amount);
         let answer =deposite-withdraw;
+        console.log(deposite,withdraw)
         // console.log(answer)
-        if(!answer>0){
+        if(0>answer){
             // console.log(answer,"zero")
             return res.status(400).send({msg:"you have enficenent Balance"});
         }
@@ -65,7 +73,8 @@ const WithDrawAmount=async(req,res)=>{
             await amount_Model.create({
                 CustmerId:userid,
                    amount:amount,
-                   status:status
+                   status:status,
+                   amountDetail:option
            })
            const data =await custmor_model.findById(userid)
            const{name,acountNumber}=data;
@@ -124,19 +133,26 @@ const CheckBalance=async(req,res)=>{
 
 
 const ResetPasword=async(req,res)=>{
-    // console.log(req.body);
+    console.log(req.body);
     const {
         userid,
         oldpassword,
         newpassword,
-        confomepass
+        confomepass,
+        otp
       }=req.body;
       try {
         let finddata =await custmor_model.findById(userid);
         const passwordMatching = await bcrypt.compare(oldpassword, finddata.accountpassword);
         if (!passwordMatching) {
             // console.log(passwordMatching);
-            return res.status(400).send({ msg: "Invalid password!" });
+            return res.status(400).send({ msg: "inCorrect password!" });
+        }
+
+        const findOtp =await otp_Model.findOne({custmerId:userid})
+        // console.log(findOtp);
+        if(findOtp.otp!=otp){
+            return res.status(400).send({ msg: "In_Correct otp please write Currect otp" });
         }
        
                   let salt =await bcrypt.genSalt(10);
@@ -183,7 +199,7 @@ const MiniStatement=async(req,res)=>{
 
 
 const SearchStatement=async(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     const { userid ,enddate, startdate}=req.body;
     try {
         // let findData =await amount_Model.find({
@@ -206,8 +222,8 @@ const SearchStatement=async(req,res)=>{
                   { CustmerId:userid}
                 ],
               })
-        //   console.log(!findData)
-          if(!findData){
+          console.log(findData)
+          if(findData){
             console.log("no")
             return res.status(400).send({msg:"false"})
           }

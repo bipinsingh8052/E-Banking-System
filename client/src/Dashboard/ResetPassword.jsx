@@ -6,6 +6,8 @@ import BaseUrl from '../Confi'
 import { useNavigate } from "react-router-dom";
 export default function ResetPassword() {
   let [input,setinput]=useState({})
+  
+  let [btnstatus,setbtnStatus]=useState(false);
   let nav =useNavigate();
   const Handleinput=(e)=>{
     let{name,value}=e.target;
@@ -13,6 +15,21 @@ export default function ResetPassword() {
   }
   const buttonClick =()=>{
     console.log(input);
+  }
+
+
+  const SendOTP =async(e)=>{
+    e.preventDefault()
+    let api =`${BaseUrl}/SendOTP`;
+    try {
+      let response =await axios.post(api,{id:localStorage.getItem("UserId")});
+      console.log(response)
+      toast.success(response.data.msg)
+      setbtnStatus(true)
+    } catch (error) {
+      toast.error(error.response.data.msg)
+
+    }
   }
 
   const Handleform=async(e)=>{
@@ -52,13 +69,20 @@ export default function ResetPassword() {
               </div>
               <div className='Newpassword'>
                 <label >Enter the New Password</label>
-                <input type="text" name='newpassword' onChange={Handleinput} />
+                <input type="password" name='newpassword' onChange={Handleinput} />
               </div>
               <div className="confomepassword">
                 <label >Write Confime Password</label>
                 <input type="text" name='confomepass' onChange={Handleinput}  />
               </div>
-              <button type="submit" onClick={buttonClick}>Submit</button>
+              {
+                (btnstatus)?
+                <> <input type='number' placeholder='Enter the Otp'  id='otpfiled'  name='otp' onChange={Handleinput}/>
+                <button type="submit" onClick={buttonClick}>Submit</button></>:
+                <>
+               
+                <button  onClick={SendOTP}>Send OTP</button></>
+              }
             </form>
           </div>
         </div>

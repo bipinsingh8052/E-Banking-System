@@ -32,8 +32,8 @@ export default function AccountStatement() {
               <tr>
                 <th>Date</th>
                 <th>Transactions</th>
-                <th>Debit</th>
                 <th>Credit</th>
+                <th>Debit</th>
                 <th>Balance</th>
               </tr>
             </thead>
@@ -42,6 +42,15 @@ export default function AccountStatement() {
             
 
                 data.map((e,index)=>{
+
+                  const dateString = e.date;
+                  const date = new Date(dateString);
+
+                  const formattedDate = date.toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "short", // "Mar"
+                    year: "numeric",
+                  });
                   if (e.status === "Deposite") {
                     answer += e.amount; // Add deposit
                     // console.log(answer)
@@ -51,8 +60,8 @@ export default function AccountStatement() {
                 }return(
                   
                   <tr key={index}>
-                    <td>{e.date}</td>
-                    <td>UPI</td>
+                    <td>{formattedDate}</td>
+                    <td>{e.amountDetail}</td>
                     {
                       (e.status=="Deposite")?<td style={{color:"green",fontWeight:"600"}}>{e.amount}</td>:<td>----</td>
                     }

@@ -5,6 +5,7 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast';
 export default function MiniStatment() {
   let[data,setdata]=useState([])
+  let[show,setshow]=useState(false)
   let [startdate,setstartdate]=useState("")
   let[endDate,setEndDate]=useState("");
 
@@ -22,8 +23,11 @@ const Searchbar=async()=>{
     try {
       let response =await axios.post(api,{userid:localStorage.getItem("UserId"),startdate:startdate,enddate:endDate})
       console.log(response.data)
+      setdata(response.data)
+      
     } catch (error) {
       console.log(error.response.data);
+      setshow(true)
     }
   }
 }
@@ -59,33 +63,44 @@ const Searchbar=async()=>{
         <button onClick={Searchbar}>Search it</button>
       </div>
       <div className="account_statement_detail">
-        <table id="customers">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Transactions</th>
-              <th>Debit</th>
-              <th>Credit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              data.map((e,index)=>{return(
-                <tr key={index}>
-                  <td>{e.date}</td>
-                  <td>UPI</td>
-                  {
-                    (e.status=="Deposite")?<td style={{color:"green", fontWeight:"490"}}>{e.amount}</td>:<td>___</td>
-                  }
-                  {
-                    (e.status=="Withdraw")?<td style={{color:"red", fontWeight:"490"}}>{e.amount}</td>:<td>___</td>
-                  }
-                </tr>
-              )})
-            }
+       {
+        (show)?(<p id='notAdata'>not a Data...!!!</p>):( <table id="customers">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Transactions</th>
+            <th>Credit</th>
+            <th>Dedit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.map((e,index)=>{
+              const dateString = e.date;
+                const date = new Date(dateString);
 
-          </tbody>
-        </table>
+                const formattedDate = date.toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short", // "Mar"
+                  year: "numeric",
+                });
+              return(
+              <tr key={index}>
+                <td>{formattedDate}</td>
+                <td>UPI</td>
+                {
+                  (e.status=="Deposite")?<td style={{color:"green", fontWeight:"490"}}>{e.amount}</td>:<td>___</td>
+                }
+                {
+                  (e.status=="Withdraw")?<td style={{color:"red", fontWeight:"490"}}>{e.amount}</td>:<td>___</td>
+                }
+              </tr>
+            )})
+          }
+
+        </tbody>
+      </table>)
+       }
       </div>
     </div>
 <Toaster/>
