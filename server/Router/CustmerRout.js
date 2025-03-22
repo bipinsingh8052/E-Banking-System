@@ -20,4 +20,6 @@ route.post("/searchStatement",AmountController.SearchStatement);
 
 
 route.post("/SendOTP",OtpController.OtpGenerator);
+route.post("/profile",AmountController.ProfilePage)
+
 module.exports=route;

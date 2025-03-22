@@ -38,7 +38,8 @@ export default function DasNavbar() {
         <div className="das_real_navbar">
 
         </div>
-        <Navbar expand="lg"  className='dasnavbar_mainsection'>
+        {/* <Navbar expand="lg"  className=' bg-danger text-white' bg='danger' style={{color:'whitesmoke'
+        }}   >
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -53,7 +54,39 @@ export default function DasNavbar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
+
+
+<Navbar expand="lg" className="dasnavbar_mainsection text-light">
+  <Container>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" className='bg-white' />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto gap-5">
+        <Nav.Link as={Link} to="/dashboard/profile" className="nav_option text-light">
+          Profile
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/accountStatement" className="nav_option text-light">
+          Account Statement
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/submitcash" className="nav_option text-light">
+          Submit Cash
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/withdrawcash" className="nav_option text-light">
+          Withdraw Cash
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/ministatement" className="nav_option text-light">
+          Mini Statement
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/balance" className="nav_option text-light">
+          Check Balance
+        </Nav.Link>
+        <Nav.Link as={Link} to="/dashboard/password" className="nav_option text-light">
+          Reset Password
+        </Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 
 
       

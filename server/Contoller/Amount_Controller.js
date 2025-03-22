@@ -222,18 +222,32 @@ const SearchStatement=async(req,res)=>{
                   { CustmerId:userid}
                 ],
               })
-          console.log(findData)
-          if(findData){
-            console.log("no")
+        //   console.log(findData)
+          if(findData.length ==0){
+            // console.log("no")
             return res.status(400).send({msg:"false"})
           }
-           res.status(200).send({msg:"true"})
+           res.status(200).send(findData)
     } catch (error) {
         res.status(500).send({msg:"server error"})
     }
     
 }
 
+
+
+const ProfilePage=async(req,res)=>{
+    // console.log(req.body)
+    const { userid }=req.body;
+    try {
+        let data =await custmor_model.findById(userid)
+        // console.log(data)
+        res.status(200).send(data);
+    } catch (error) {
+        res.status(500).send("server error");
+    }
+    
+}
 
 module.exports={
 
@@ -243,5 +257,6 @@ module.exports={
     ResetPasword,
     AmountStatement,
     MiniStatement,
-    SearchStatement
+    SearchStatement,
+    ProfilePage
 }
